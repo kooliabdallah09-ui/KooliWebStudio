@@ -1,32 +1,42 @@
 /**
  * Kooli Web Studio
- * Mobile nav, footer year, contact form, language switcher (EN/FR)
+ * Language switcher (EN/FR), mobile nav, scroll reveal, contact form, footer year
  */
-
 (function () {
   "use strict";
 
-  // ----- Translations (EN / FR) -----
   var translations = {
     en: {
-      nav: { about: "About", services: "Services", pricing: "Pricing", work: "Work", contact: "Contact" },
+      nav: { about: "About", services: "Services", pricing: "Pricing", work: "Work", contact: "Contact", cta: "Free consultation" },
       hero: {
-        title: "Affordable Websites That Help Small to Medium Businesses Get More Clients",
+        badge: "Web studio for small businesses in Tunisia",
+        title: "Affordable websites that help small businesses <em>get more clients.</em>",
         subtitle: "Want to make a website? We design fast, mobile-friendly websites for local businesses in Tunisia. Clear pricing, quick delivery, and zero technical headache.",
-        cta: "Get a Free Website Consultation",
-        ctaSecondary: "See My Work"
+        cta: "Get a free consultation",
+        ctaSecondary: "See services",
+        fact1: "From 300 DT",
+        fact2: "1–3 days after confirmation",
+        fact3: "Pay once, own it"
       },
       about: {
         title: "About",
-        lead: "We help small to medium businesses get online with clean, fast, and effective websites.",
-        bullet1: "<strong>Who we help:</strong> Local businesses, farms, restaurants, and shops that need a professional online presence.",
-        bullet2: "<strong>What we solve:</strong> Expensive agencies and complicated processes. You get a clear, affordable website without the hassle.",
-        bullet3: "<strong>Why clients trust us:</strong> Clear communication, fixed pricing, and a simple process from idea to launch.",
-        trust: "We've worked with local businesses and farms to help them get online quickly, professionally, and affordably.",
+        lead: "We help small to medium businesses get online <span class=\"inl\" aria-hidden=\"true\"><img src=\"images/hero-olive-hills.jpg\" alt=\"\"></span> with clean, fast, <span class=\"muted\">and effective <em>websites.</em></span>",
+        photoTag: "Local businesses",
+        b1title: "Who we help",
+        b1p: "Local businesses, farms, restaurants, and shops that need a professional online presence.",
+        b2k: "What we solve",
+        b2big: "No agency <em>prices.</em>",
+        b2p: "Expensive agencies and complicated processes. You get a clear, affordable website without the hassle.",
+        b3k: "Delivery",
+        b3num: "1–3",
+        b3p: "days from the day you confirm your project.",
+        b4k: "Why clients trust us",
+        b4p: "Clear communication, fixed pricing, and a simple process from idea to launch.",
         seo: "Not sure how to make a website? We work with Tunisian businesses and local clients across Tunisia. <a href=\"#services\">See what we can build for you</a> or <a href=\"#contact\">get in touch</a> to make a website for your business."
       },
       services: {
-        title: "What We Can Build For You",
+        eyebrow: "Services",
+        title: "What we can <span class=\"sage\">build for you.</span>",
         forWho: "Perfect for restaurants, farms, local shops, schools, and small to medium businesses in Tunisia.",
         introSeo: "How to make a website that works: We build fast, mobile-friendly sites for Tunisia. <a href=\"#contact\">Request a free consultation</a> to make a website for your business.",
         s1title: "Small to medium business websites",
@@ -43,7 +53,7 @@
         s6p: "Need changes or new sections later? We can help with updates."
       },
       tech: {
-        title: "Built With Reliable, Modern Tools",
+        title: "Built with reliable, modern tools",
         intro: "We use proven technologies to make websites fast, secure, and easy to maintain.",
         item1title: "HTML, CSS & JavaScript",
         item1desc: "Clean, fast websites that load quickly and work everywhere.",
@@ -54,14 +64,25 @@
         item4title: "Git",
         item4desc: "Safe updates and easy future changes."
       },
+      process: {
+        eyebrow: "Process",
+        title: "How it works, <em>in three steps.</em>",
+        step1title: "Free consultation",
+        step1p: "We discuss your business and what you need. No obligation.",
+        step2title: "Design & build",
+        step2p: "We create your site based on your needs and keep it simple and professional.",
+        step3title: "Launch & support",
+        step3p: "We go live when you're happy. We're here if you need small updates later."
+      },
       pricing: {
         title: "Pricing",
+        headline: "Pay once. <em>Own your website.</em>",
         anchor: "No agencies. No subscriptions. You pay once and own your website.",
         intro: "Packages start around 300 DT depending on your needs.",
         badge: "Popular",
         starterName: "Starter",
         starterDesc: "Simple 1–3 page website",
-        starterPrice: "From 300 DT",
+        starterPrice: "<small>From</small> 300 DT",
         starterF1: "Home, about, contact (or similar)",
         starterF2: "Mobile-friendly design",
         starterF3: "Contact form",
@@ -77,28 +98,12 @@
         growthF4: "Revisions included",
         growthF5: "Backend work included",
         growthCta: "Get a quote",
-        timeline: "Most projects are completed in 7–14 days.",
+        timeline: "Your website is delivered in 1–3 days from the day you confirm.",
         note: "No upfront commitment — we agree on everything before starting."
       },
-      portfolio: {
-        title: "Work",
-        intro: "Here are a few websites we are building for Tunisian businesses.",
-        view1: "View farm website project",
-        view2: "View olive oil producer website project",
-        p1desc: "Built a clean website to help a local farm present its products professionally. Budget-friendly project for a local business.",
-        p2desc: "Professional website for an olive oil producer. Responsive design, contact features, and clear presentation of products. Budget-friendly project for a local business."
-      },
-      process: {
-        title: "How It Works",
-        step1title: "Free consultation",
-        step1p: "We discuss your business and what you need. No obligation.",
-        step2title: "Design & build",
-        step2p: "We create your site based on your needs and keep it simple and professional.",
-        step3title: "Launch & support",
-        step3p: "We go live when you're happy. We're here if you need small updates later."
-      },
       contact: {
-        title: "Get in Touch",
+        eyebrow: "Contact",
+        title: "Let's build your <em>website.</em>",
         intro: "Want to make a website? Tell us about your business and we usually reply within 24 hours.",
         whatsapp: "Contact on WhatsApp",
         successTitle: "Thank you!",
@@ -112,29 +117,43 @@
         messageLabel: "Your message",
         messagePlaceholder: "Tell us about your business and what you need...",
         submit: "Request a free consultation",
-        noSpam: "No spam. No obligation."
+        noSpam: "No spam. No obligation.",
+        whisper: "[ Built in Tunisia, one website at a time ]"
       },
       footer: { role: "Web Design & Development for Small to Medium Businesses", copy: "All rights reserved." }
     },
+
     fr: {
-      nav: { about: "À propos", services: "Services", pricing: "Tarifs", work: "Réalisations", contact: "Contact" },
+      nav: { about: "À propos", services: "Services", pricing: "Tarifs", work: "Réalisations", contact: "Contact", cta: "Consultation gratuite" },
       hero: {
-        title: "Des sites web abordables qui aident les petites et moyennes entreprises à avoir plus de clients",
+        badge: "Studio web pour les petites entreprises en Tunisie",
+        title: "Des sites web abordables qui aident les PME <em>à avoir plus de clients.</em>",
         subtitle: "Vous voulez créer un site web ? Nous concevons des sites rapides et adaptés au mobile pour les entreprises en Tunisie. Tarifs clairs, livraison rapide.",
         cta: "Consultation gratuite",
-        ctaSecondary: "Voir mes réalisations"
+        ctaSecondary: "Voir les services",
+        fact1: "À partir de 300 DT",
+        fact2: "1 à 3 jours après confirmation",
+        fact3: "Payé une fois, à vous"
       },
       about: {
         title: "À propos",
-        lead: "Nous aidons les petites et moyennes entreprises à être en ligne avec des sites clairs, rapides et efficaces.",
-        bullet1: "<strong>Qui nous ciblons :</strong> Commerces locaux, fermes, restaurants et boutiques qui ont besoin d'une présence en ligne professionnelle.",
-        bullet2: "<strong>Pourquoi nous ? : </strong>Pas d'agences chères ni de process compliqués. Vous obtenez un site clair et abordable sans prise de tête.",
-        bullet3: "<strong>Pourquoi on nous fait confiance :</strong> Communication claire, tarifs fixes et un process simple de l'idée à la mise en ligne.",
-        trust: "Nous avons travaillé avec des commerces locaux et des fermes pour les mettre en ligne rapidement, de façon professionnelle et à prix raisonnable.",
+        lead: "Nous aidons les PME à être en ligne <span class=\"inl\" aria-hidden=\"true\"><img src=\"images/hero-olive-hills.jpg\" alt=\"\"></span> avec des sites clairs, rapides <span class=\"muted\">et <em>efficaces.</em></span>",
+        photoTag: "Commerces locaux",
+        b1title: "Qui nous aidons",
+        b1p: "Commerces locaux, fermes, restaurants et boutiques qui ont besoin d'une présence en ligne professionnelle.",
+        b2k: "Ce que nous résolvons",
+        b2big: "Pas des prix <em>d'agence.</em>",
+        b2p: "Pas d'agences chères ni de process compliqués. Vous obtenez un site clair et abordable sans prise de tête.",
+        b3k: "Livraison",
+        b3num: "1–3",
+        b3p: "jours à partir de la confirmation de votre projet.",
+        b4k: "Pourquoi on nous fait confiance",
+        b4p: "Communication claire, tarifs fixes et un process simple de l'idée à la mise en ligne.",
         seo: "Comment créer un site web ? Nous travaillons avec des entreprises tunisiennes en Tunisie. <a href=\"#services\">Découvrez ce que nous pouvons créer</a> ou <a href=\"#contact\">contactez-nous</a> pour créer un site web pour votre entreprise."
       },
       services: {
-        title: "Ce que nous pouvons créer pour vous",
+        eyebrow: "Services",
+        title: "Ce que nous pouvons <span class=\"sage\">créer pour vous.</span>",
         forWho: "Idéal pour les restaurants, fermes, commerces locaux, écoles et petites et moyennes entreprises en Tunisie.",
         introSeo: "Comment créer un site web qui marche : nous réalisons des sites rapides et adaptés mobile en Tunisie. <a href=\"#contact\">Demander une consultation gratuite</a> pour créer un site web pour votre entreprise.",
         s1title: "Sites pour petites et moyennes entreprises",
@@ -162,14 +181,25 @@
         item4title: "Git",
         item4desc: "Mises à jour sûres et évolutions faciles plus tard."
       },
+      process: {
+        eyebrow: "Process",
+        title: "Comment ça se passe, <em>en trois étapes.</em>",
+        step1title: "Consultation gratuite",
+        step1p: "On discute de votre activité et de vos besoins. Sans engagement.",
+        step2title: "Conception et réalisation",
+        step2p: "Nous créons votre site selon vos besoins, simple et professionnel.",
+        step3title: "Mise en ligne et suivi",
+        step3p: "On met en ligne quand vous êtes satisfait. Nous restons disponibles pour de petites mises à jour."
+      },
       pricing: {
         title: "Tarifs",
+        headline: "Payez une fois. <em>Le site est à vous.</em>",
         anchor: "Pas d'agences. Pas d'abonnements. Vous payez une fois et le site vous appartient.",
         intro: "Les forfaits commencent autour de 300 DT selon vos besoins.",
         badge: "Populaire",
         starterName: "Starter",
         starterDesc: "Site simple 1–3 pages",
-        starterPrice: "À partir de 300 DT",
+        starterPrice: "<small>À partir de</small> 300 DT",
         starterF1: "Accueil, à propos, contact (ou similaire)",
         starterF2: "Design adapté au mobile",
         starterF3: "Formulaire de contact",
@@ -185,28 +215,12 @@
         growthF4: "Révisions incluses",
         growthF5: "Travail backend inclus",
         growthCta: "Demander un devis",
-        timeline: "La plupart des projets sont livrés en 7 à 14 jours.",
+        timeline: "Votre site est livré en 1 à 3 jours à partir de la confirmation.",
         note: "Aucun engagement à l'avance — on se met d'accord sur tout avant de commencer."
       },
-      portfolio: {
-        title: "Réalisations",
-        intro: "Quelques sites que nous sommes entrain de réaliser pour des entreprises tunisiennes.",
-        view1: "Voir le projet site ferme",
-        view2: "Voir le projet site producteur huile d'olive",
-        p1desc: "Site clair pour une ferme locale afin de présenter ses produits professionnellement. Projet à prix abordable pour un commerce local.",
-        p2desc: "Site professionnel pour un producteur d'huile d'olive. Design responsive, formulaire de contact et présentation claire des produits. Projet à prix abordable pour un commerce local."
-      },
-      process: {
-        title: "Comment ça se passe",
-        step1title: "Consultation gratuite",
-        step1p: "On discute de votre activité et de vos besoins. Sans engagement.",
-        step2title: "Conception et réalisation",
-        step2p: "Nous créons votre site selon vos besoins, simple et professionnel.",
-        step3title: "Mise en ligne et suivi",
-        step3p: "On met en ligne quand vous êtes satisfait. Nous restons disponibles pour de petites mises à jour."
-      },
       contact: {
-        title: "Contact",
+        eyebrow: "Contact",
+        title: "Créons votre <em>site web.</em>",
         intro: "Vous voulez créer un site web ? Parlez-nous de votre activité, nous répondons en général sous 24 h.",
         whatsapp: "Contacter sur WhatsApp",
         successTitle: "Merci !",
@@ -220,20 +234,15 @@
         messageLabel: "Votre message",
         messagePlaceholder: "Parlez-nous de votre activité et de vos besoins...",
         submit: "Demander une consultation gratuite",
-        noSpam: "Pas de spam. Pas d'engagement."
+        noSpam: "Pas de spam. Pas d'engagement.",
+        whisper: "[ Fait en Tunisie, un site à la fois ]"
       },
       footer: { role: "Création de sites web pour petites et moyennes entreprises", copy: "Tous droits réservés." }
     }
   };
 
   function getNested(obj, key) {
-    var parts = key.split(".");
-    var v = obj;
-    for (var i = 0; i < parts.length; i++) {
-      v = v[parts[i]];
-      if (v === undefined) return undefined;
-    }
-    return v;
+    return key.split(".").reduce(function (v, k) { return v == null ? undefined : v[k]; }, obj);
   }
 
   function applyLanguage(lang) {
@@ -241,101 +250,100 @@
     document.documentElement.lang = lang;
 
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
-      var key = el.getAttribute("data-i18n");
-      var value = getNested(t, key);
-      if (value != null) {
-        if (el.getAttribute("data-i18n-html") === "true") {
-          el.innerHTML = value;
-        } else {
-          el.textContent = value;
-        }
-      }
+      var value = getNested(t, el.getAttribute("data-i18n"));
+      if (value == null) return;
+      if (el.getAttribute("data-i18n-html") === "true") el.innerHTML = value;
+      else el.textContent = value;
     });
-
     document.querySelectorAll("[data-i18n-placeholder]").forEach(function (el) {
-      var key = el.getAttribute("data-i18n-placeholder");
-      var value = getNested(t, key);
+      var value = getNested(t, el.getAttribute("data-i18n-placeholder"));
       if (value != null) el.placeholder = value;
     });
 
-    var successTitle = document.getElementById("form-success-title");
-    var successText = document.getElementById("form-success-text");
-    if (successTitle && t.contact) successTitle.textContent = t.contact.successTitle;
-    if (successText && t.contact) successText.textContent = t.contact.successText;
+    var st = document.getElementById("form-success-title");
+    var sx = document.getElementById("form-success-text");
+    if (st) st.textContent = t.contact.successTitle;
+    if (sx) sx.textContent = t.contact.successText;
 
     document.querySelectorAll(".lang-option").forEach(function (btn) {
       btn.setAttribute("aria-pressed", btn.getAttribute("data-lang") === lang ? "true" : "false");
     });
-
     try { localStorage.setItem("lang", lang); } catch (e) {}
   }
 
-  var langButtons = document.querySelectorAll(".lang-option");
-  langButtons.forEach(function (btn) {
+  document.querySelectorAll(".lang-option").forEach(function (btn) {
     btn.addEventListener("click", function () {
       var lang = btn.getAttribute("data-lang");
-      if (lang && translations[lang]) applyLanguage(lang);
+      if (translations[lang]) applyLanguage(lang);
     });
   });
 
-  var savedLang = "en";
-  try { savedLang = localStorage.getItem("lang") || "en"; } catch (e) {}
-  if (translations[savedLang]) applyLanguage(savedLang);
+  var savedLang = "fr";
+  try { savedLang = localStorage.getItem("lang") || "fr"; } catch (e) {}
+  applyLanguage(translations[savedLang] ? savedLang : "fr");
 
-  // ----- Footer: current year -----
+  // Footer year
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ----- Background videos: slow down playback -----
-  var slowRate = 0.6;
-  document.querySelectorAll(".hero-video, .about-video, .footer-video, .tech-video").forEach(function (video) {
-    video.playbackRate = slowRate;
-  });
-
-  // ----- Mobile nav toggle -----
+  // Mobile nav
   var nav = document.querySelector(".nav");
   var toggle = document.querySelector(".nav-toggle");
-  var navShell = document.querySelector(".nav-shell");
   if (nav && toggle) {
-    toggle.addEventListener("click", function () {
-      var isOpen = nav.classList.contains("open");
-      nav.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", !isOpen);
-      toggle.setAttribute("aria-label", isOpen ? "Open menu" : "Close menu");
-    });
-    var links = nav.querySelectorAll(".nav-links a");
-    links.forEach(function (link) {
-      link.addEventListener("click", function () {
-        nav.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open menu");
-      });
-    });
-  }
-
-  // ----- Sticky nav: add shell class when scrolling -----
-  if (navShell) {
-    var lastScrollY = window.scrollY || window.pageYOffset || 0;
-    var updateNavShell = function () {
-      var currentY = window.scrollY || window.pageYOffset || 0;
-      var shouldBeScrolled = currentY > 32;
-      navShell.classList.toggle("nav-shell--scrolled", shouldBeScrolled);
-      lastScrollY = currentY;
+    var setOpen = function (open) {
+      nav.classList.toggle("open", open);
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     };
-
-    updateNavShell();
-    window.addEventListener("scroll", updateNavShell, { passive: true });
+    toggle.addEventListener("click", function () { setOpen(!nav.classList.contains("open")); });
+    nav.querySelectorAll(".nav-links a").forEach(function (a) {
+      a.addEventListener("click", function () { setOpen(false); });
+    });
+    document.addEventListener("keydown", function (e) { if (e.key === "Escape") setOpen(false); });
   }
 
-  // ----- Contact form -----
-  var contactForm = document.getElementById("contact-form");
-  var formSuccess = document.getElementById("form-success-message");
-  if (contactForm && formSuccess) {
-    contactForm.addEventListener("submit", function () {
+  // Scroll reveal
+  var items = document.querySelectorAll(".rv");
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) {
+        if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    items.forEach(function (el) { io.observe(el); });
+  } else {
+    items.forEach(function (el) { el.classList.add("in"); });
+  }
+
+  // Phone quick-contact bar: show after the hero, hide while the contact section is on screen
+  var mbar = document.getElementById("mbar");
+  var hero = document.querySelector(".hero");
+  var contact = document.getElementById("contact");
+  if (mbar && hero && contact && "IntersectionObserver" in window) {
+    var heroVisible = true, contactVisible = false;
+    var update = function () { mbar.classList.toggle("show", !heroVisible && !contactVisible); };
+    new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; update(); }, { threshold: 0.25 }).observe(hero);
+    new IntersectionObserver(function (e) { contactVisible = e[0].isIntersecting; update(); }).observe(contact);
+  }
+
+  // Gentle parallax on the hero photo
+  var heroBg = document.querySelector(".hero-bg");
+  if (heroBg && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    window.addEventListener("scroll", function () {
+      var y = window.scrollY;
+      if (y < 1100) heroBg.style.translate = "0 " + (y * 0.22) + "px";
+    }, { passive: true });
+  }
+
+  // Contact form (posts to Google Apps Script through a hidden iframe)
+  var form = document.getElementById("contact-form");
+  var success = document.getElementById("form-success-message");
+  if (form && success) {
+    form.addEventListener("submit", function () {
       setTimeout(function () {
-        formSuccess.hidden = false;
-        contactForm.reset();
-        formSuccess.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        success.hidden = false;
+        form.reset();
+        success.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }, 800);
     });
   }
