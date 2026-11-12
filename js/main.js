@@ -339,7 +339,12 @@
   var form = document.getElementById("contact-form");
   var success = document.getElementById("form-success-message");
   if (form && success) {
-    form.addEventListener("submit", function () {
+    var openedAt = Date.now();
+    form.addEventListener("submit", function (ev) {
+      var hp = form.querySelector(".hp");
+      if (hp && hp.value) { ev.preventDefault(); return; }
+      var el = document.getElementById("form-elapsed");
+      if (el) el.value = String(Date.now() - openedAt);
       setTimeout(function () {
         success.hidden = false;
         form.reset();

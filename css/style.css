@@ -209,6 +209,7 @@ h1 em{font-size:1.1em;letter-spacing:-.02em;color:var(--accent)}
 .no-spam{text-align:center;font-size:13px;color:var(--ink-3)}
 .form-success{background:#E7EEDC;color:#33441F;border-radius:14px;padding:14px 16px;font-size:14.5px;margin-bottom:16px}
 .form-target{display:none}
+.hp{position:absolute!important;left:-9999px;top:auto;width:1px;height:1px;opacity:0;pointer-events:none}
 .contact-whisper{position:absolute;left:48px;bottom:24px;font-size:13px;color:rgba(255,255,255,.6)}
 
 /* Footer */
